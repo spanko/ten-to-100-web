@@ -17,7 +17,7 @@
 .PREREQUISITES
     A Cloudflare API token (scoped to the tento100.com zone) with:
       - Zone : DNS : Edit
-      - Zone : Dynamic Redirect : Edit
+      - Zone : Single Redirect : Edit   (governs the http_request_dynamic_redirect phase)
       - Zone : Zone : Read
     Provide it via -ApiToken or the CLOUDFLARE_API_TOKEN environment variable.
 
@@ -37,7 +37,7 @@ param(
     [string] $ApiToken = $env:CLOUDFLARE_API_TOKEN,
 
     # Skip the apex->www redirect rule (use when the token lacks the
-    # Zone:Dynamic Redirect scope, or you'll create the rule by hand).
+    # Zone:Single Redirect scope, or you'll create the rule by hand).
     [switch] $SkipRedirect
 )
 
@@ -86,6 +86,7 @@ Write-Host "    Zone id: $zoneId"
 
 # --- DNS record upsert -------------------------------------------------------
 function Set-CfDnsRecord {
+    [CmdletBinding(SupportsShouldProcess)]
     param(
         [Parameter(Mandatory)][string] $Type,
         [Parameter(Mandatory)][string] $Name,     # full FQDN

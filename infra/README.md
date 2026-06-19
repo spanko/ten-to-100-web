@@ -24,7 +24,7 @@ Automated provisioning for the TenTo100 site: an **Azure Static Web App**
   (needed only for the auto-secret step; the repo must already exist on GitHub)
 - A **Cloudflare API token** scoped to the `tento100.com` zone with:
   - `Zone : DNS : Edit`
-  - `Zone : Dynamic Redirect : Edit`
+  - `Zone : Single Redirect : Edit`
   - `Zone : Zone : Read`
 
   Create at **Cloudflare → My Profile → API Tokens → Create Token → Custom
