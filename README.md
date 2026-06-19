@@ -42,6 +42,11 @@ npm run preview  # serve the production build locally
 │  └─ pages/
 │     ├─ index.astro           # the single landing page
 │     └─ 404.astro             # custom not-found page
+├─ infra/                      # provisioning + DNS automation (PowerShell + Bicep)
+│  ├─ main.bicep               # the Static Web App resource
+│  ├─ Deploy-Azure.ps1         # provision SWA + set GitHub deploy-token secret
+│  ├─ Configure-CloudflareDns.ps1  # www CNAME + apex→www redirect
+│  └─ Add-CustomDomain.ps1     # register www.tento100.com on the SWA
 ├─ staticwebapp.config.json    # Azure SWA routing + security headers
 ├─ .github/workflows/azure-static-web-apps.yml
 ├─ astro.config.mjs            # site URL + sitemap + Tailwind
@@ -71,7 +76,14 @@ The build config the workflow uses:
 | API location | _(empty — no API)_ |
 | Output location | `dist` |
 
-### One-time setup
+> **Scripted setup (recommended).** Everything below — provisioning the SWA,
+> wiring the GitHub deploy-token secret, and configuring the
+> `www.tento100.com` DNS + apex→www redirect in Cloudflare — is automated by the
+> PowerShell scripts in **[`infra/`](infra/)**. See
+> [`infra/README.md`](infra/README.md) for the run order and the Cloudflare
+> token scopes. The manual portal steps below are kept as a fallback / reference.
+
+### One-time setup (manual portal alternative)
 
 1. **Create the Static Web App** in the [Azure Portal](https://portal.azure.com):
    _Create a resource → Static Web App_.
