@@ -1,0 +1,51 @@
+---
+import { footer, site } from '../data/content';
+
+// Build a "2025" or "2025–2026" copyright range. Astro renders at build time,
+// so this resolves to the build year — fine for a static marketing site.
+const buildYear = new Date().getFullYear();
+const yearLabel =
+  buildYear > footer.startYear ? `${footer.startYear}–${buildYear}` : `${footer.startYear}`;
+---
+
+<footer class="border-t border-[var(--color-line)]">
+  <div
+    class="container-x flex flex-col items-center justify-between gap-6 py-10 sm:flex-row"
+  >
+    <div class="flex items-center gap-2.5">
+      <span
+        class="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] font-mono text-[0.7rem] font-bold text-[#04060a]"
+        aria-hidden="true">10</span
+      >
+      <div class="text-sm">
+        <p class="font-semibold">{site.name}</p>
+        <p class="text-[var(--color-faint)]">{footer.tagline}</p>
+      </div>
+    </div>
+
+    <nav class="flex items-center gap-6 text-sm" aria-label="Footer">
+      {
+        footer.links.map((link) => (
+          <a
+            href={link.href}
+            class="text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={`mailto:${site.email}`}
+        class="text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
+      >
+        {site.email}
+      </a>
+    </nav>
+  </div>
+
+  <div class="container-x pb-8">
+    <p class="text-xs text-[var(--color-faint)]">
+      © {yearLabel} {site.name}. All rights reserved.
+    </p>
+  </div>
+</footer>

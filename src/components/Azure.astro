@@ -1,0 +1,53 @@
+---
+import { azure } from '../data/content';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="azure" class="section">
+  <div class="container-x">
+    <div
+      class="relative overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-8 sm:p-10 md:p-12"
+    >
+      <!-- Subtle Azure-blue wash -->
+      <div
+        class="pointer-events-none absolute right-0 top-0 h-64 w-64 opacity-20 blur-3xl"
+        style="background: radial-gradient(closest-side, var(--color-accent), transparent 70%);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="relative flex items-center gap-3">
+        <!-- Abstract chevron mark (avoids reproducing the trademarked logo) -->
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="az" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--color-accent)"></stop>
+              <stop offset="1" stop-color="var(--color-accent-2)"></stop>
+            </linearGradient>
+          </defs>
+          <path
+            d="M16 3 5 27h6.5l4.5-10 3 6.5-3.2 1.2L23 27h4L16 3z"
+            fill="url(#az)"></path>
+        </svg>
+        <span class="eyebrow !text-[var(--color-muted)]">Microsoft partner stack</span>
+      </div>
+
+      <div class="relative mt-6">
+        <SectionHeading eyebrow={azure.eyebrow} heading={azure.heading}>
+          <p class="mt-4 max-w-2xl text-[var(--color-muted)]">{azure.body}</p>
+        </SectionHeading>
+      </div>
+
+      <dl class="relative mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+        {
+          azure.items.map((item, i) => (
+            <div class="reveal border-l-2 border-[var(--color-accent)]/40 pl-4" style={`transition-delay: ${i * 70}ms;`}>
+              <dt class="font-semibold">{item.name}</dt>
+              <dd class="mt-1 text-sm text-[var(--color-muted)]">{item.blurb}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+</section>

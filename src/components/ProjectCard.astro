@@ -1,0 +1,50 @@
+---
+import type { Project } from '../data/content';
+
+interface Props {
+  project: Project;
+  index?: number;
+}
+const { project, index = 0 } = Astro.props;
+
+// Stage -> pill styling. Keyed to the constrained `Stage` union.
+const stageStyles: Record<Project['stage'], string> = {
+  Concept: 'text-[#c4b5fd] bg-[#c4b5fd]/10 border-[#c4b5fd]/25',
+  Prototype: 'text-[#7dd3fc] bg-[#7dd3fc]/10 border-[#7dd3fc]/25',
+  'In development': 'text-[#6ee7b7] bg-[#6ee7b7]/10 border-[#6ee7b7]/25',
+  Live: 'text-[#86efac] bg-[#86efac]/10 border-[#86efac]/25',
+};
+const dotColor: Record<Project['stage'], string> = {
+  Concept: '#c4b5fd',
+  Prototype: '#7dd3fc',
+  'In development': '#6ee7b7',
+  Live: '#86efac',
+};
+---
+
+<article
+  class="card card-hover reveal flex h-full flex-col p-6 sm:p-7"
+  style={`transition-delay: ${index * 70}ms;`}
+>
+  <div class="flex items-start justify-between gap-4">
+    <h3 class="text-xl font-semibold">{project.name}</h3>
+    <span
+      class={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[0.68rem] ${stageStyles[project.stage]}`}
+    >
+      <span
+        class="h-1.5 w-1.5 rounded-full"
+        style={`background:${dotColor[project.stage]}`}
+        aria-hidden="true"></span>
+      {project.stage}
+    </span>
+  </div>
+
+  <p class="mt-1.5 text-[var(--color-ink)]/90">{project.pitch}</p>
+  <p class="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-muted)]">
+    {project.blurb}
+  </p>
+
+  <ul class="mt-5 flex flex-wrap gap-2" aria-label="Tags">
+    {project.tags.map((tag) => <li class="chip">{tag}</li>)}
+  </ul>
+</article>

@@ -1,0 +1,20 @@
+{
+  "name": "tento100-web",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing/portfolio website for TenTo100 — www.tento100.com",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.0",
+    "@tailwindcss/vite": "^4.1.10",
+    "astro": "^5.9.0",
+    "tailwindcss": "^4.1.10"
+  }
+}

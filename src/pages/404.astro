@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Page not found — TenTo100" description="The page you’re looking for doesn’t exist.">
+  <Header />
+  <main id="main" class="container-x grid min-h-[60vh] place-items-center py-24 text-center">
+    <div>
+      <p class="eyebrow">Error 404</p>
+      <h1 class="mt-4 text-5xl font-semibold">
+        <span class="text-gradient">Off the fairway.</span>
+      </h1>
+      <p class="mx-auto mt-4 max-w-md text-[var(--color-muted)]">
+        That page doesn’t exist (or doesn’t exist yet). Let’s get you back on track.
+      </p>
+      <a href="/" class="btn btn-primary mt-8">Back to home</a>
+    </div>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,82 @@
+---
+import { hero } from '../data/content';
+---
+
+<section id="top" class="relative overflow-hidden">
+  <!-- Background motif: soft radial glow + grid, purely decorative. -->
+  <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <div
+      class="absolute left-1/2 top-[-10%] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
+      style="background: radial-gradient(closest-side, var(--color-accent), transparent 70%);"
+    >
+    </div>
+    <div
+      class="absolute inset-0 opacity-[0.06]"
+      style="background-image: linear-gradient(var(--color-ink) 1px, transparent 1px), linear-gradient(90deg, var(--color-ink) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);"
+    >
+    </div>
+  </div>
+
+  <div class="container-x section pt-28 md:pt-32">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow reveal">{hero.eyebrow}</p>
+
+      <h1
+        class="reveal mt-5 text-4xl font-semibold sm:text-5xl md:text-6xl"
+        style="transition-delay: 60ms;"
+      >
+        {hero.headlinePre}{' '}
+        <span class="text-gradient">{hero.emphasis}</span>{hero.headlinePost}
+      </h1>
+
+      <p
+        class="reveal mx-auto mt-6 max-w-2xl text-lg text-[var(--color-muted)]"
+        style="transition-delay: 120ms;"
+      >
+        {hero.subhead}
+      </p>
+
+      <div
+        class="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
+        style="transition-delay: 180ms;"
+      >
+        <a href={hero.primaryCta.href} class="btn btn-primary w-full sm:w-auto">
+          {hero.primaryCta.label}
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a href={hero.secondaryCta.href} class="btn btn-ghost w-full sm:w-auto">
+          {hero.secondaryCta.label}
+        </a>
+      </div>
+    </div>
+
+    <!-- The 10 → 100 visual motif -->
+    <div
+      class="reveal mx-auto mt-16 flex max-w-md items-center justify-center gap-4 font-mono text-[var(--color-faint)] sm:gap-6"
+      style="transition-delay: 240ms;"
+      aria-hidden="true"
+    >
+      <span class="text-4xl font-bold text-[var(--color-muted)] sm:text-5xl">10</span>
+      <span class="h-px flex-1 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)]"></span>
+      <span class="text-2xl">→</span>
+      <span class="h-px flex-1 bg-gradient-to-r from-[var(--color-accent-2)] to-[var(--color-accent)]"></span>
+      <span
+        class="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-2)] bg-clip-text text-4xl font-bold text-transparent sm:text-5xl"
+        >100</span
+      >
+    </div>
+  </div>
+</section>

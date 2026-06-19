@@ -1,0 +1,17 @@
+---
+import { portfolio } from '../data/content';
+import SectionHeading from './SectionHeading.astro';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section id="portfolio" class="section bg-[var(--color-bg-soft)]">
+  <div class="container-x">
+    <SectionHeading eyebrow={portfolio.eyebrow} heading={portfolio.heading}>
+      <p class="mt-4 text-[var(--color-muted)]">{portfolio.intro}</p>
+    </SectionHeading>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+      {portfolio.projects.map((project, i) => <ProjectCard project={project} index={i} />)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+import { whatWeDo } from '../data/content';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="what-we-do" class="section">
+  <div class="container-x">
+    <SectionHeading eyebrow={whatWeDo.eyebrow} heading={whatWeDo.heading}>
+      <div class="mt-5 space-y-4 text-[var(--color-muted)]">
+        {whatWeDo.body.map((para) => <p>{para}</p>)}
+      </div>
+    </SectionHeading>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-3">
+      {
+        whatWeDo.pillars.map((pillar, i) => (
+          <div class="card reveal p-6" style={`transition-delay: ${i * 80}ms;`}>
+            <div
+              class="grid h-9 w-9 place-items-center rounded-lg bg-[var(--color-accent-soft)] font-mono text-sm text-[var(--color-accent)]"
+              aria-hidden="true"
+            >
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 class="mt-4 text-lg font-semibold">{pillar.title}</h3>
+            <p class="mt-2 text-sm text-[var(--color-muted)]">{pillar.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

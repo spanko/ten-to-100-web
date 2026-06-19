@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import WhatWeDo from '../components/WhatWeDo.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Enterprise from '../components/Enterprise.astro';
+import Labs from '../components/Labs.astro';
+import Azure from '../components/Azure.astro';
+import Team from '../components/Team.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import { flags } from '../data/content';
+---
+
+<Layout>
+  <Header />
+  <main id="main">
+    <Hero />
+    <WhatWeDo />
+    <Portfolio />
+    {flags.showEnterprise && <Enterprise />}
+    {flags.showLabs && <Labs />}
+    <Azure />
+    <Team />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
