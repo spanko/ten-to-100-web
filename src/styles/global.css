@@ -6,22 +6,22 @@
    utilities (e.g. `text-accent`, `bg-surface`, `font-mono`).
    ========================================================================== */
 @theme {
-  /* Surfaces — a deep, slightly blue ink rather than flat black. */
-  --color-bg: #06080c;
-  --color-bg-soft: #0a0e15;
-  --color-surface: #0e131c;
-  --color-surface-2: #141b27;
-  --color-line: #1f2937;
+  /* Surfaces — cool light gray, crisp white cards. */
+  --color-bg: #f8fafc;
+  --color-bg-soft: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f5f9;
+  --color-line: #e2e8f0;
 
   /* Text */
-  --color-ink: #e8edf6;
-  --color-muted: #97a3b6;
-  --color-faint: #5e6b80;
+  --color-ink: #0b1f33;
+  --color-muted: #51607a;
+  --color-faint: #94a3b8;
 
-  /* Brand accent — an Azure-adjacent blue that scales into violet. */
-  --color-accent: #4c8dff;
-  --color-accent-2: #8b7bff;
-  --color-accent-soft: #1b2740;
+  /* Brand accent — Azure blue into sky. */
+  --color-accent: #2563eb;
+  --color-accent-2: #0ea5e9;
+  --color-accent-soft: #e0edff;
 
   /* Typography */
   --font-sans: 'Inter var', 'Inter', ui-sans-serif, system-ui, -apple-system,
@@ -102,7 +102,7 @@
     top: -4rem;
     z-index: 100;
     background: var(--color-accent);
-    color: #04060a;
+    color: #ffffff;
     font-weight: 600;
     padding: 0.6rem 1rem;
     border-radius: 0.5rem;
@@ -157,7 +157,7 @@
   }
   .btn-primary {
     background: linear-gradient(100deg, var(--color-accent), var(--color-accent-2));
-    color: #04060a;
+    color: #ffffff;
   }
   .btn-primary:hover {
     transform: translateY(-2px);

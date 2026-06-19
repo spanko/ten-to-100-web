@@ -8,17 +8,18 @@ interface Props {
 const { project, index = 0 } = Astro.props;
 
 // Stage -> pill styling. Keyed to the constrained `Stage` union.
+// Dark, saturated text on a light tint for AA contrast on white cards.
 const stageStyles: Record<Project['stage'], string> = {
-  Concept: 'text-[#c4b5fd] bg-[#c4b5fd]/10 border-[#c4b5fd]/25',
-  Prototype: 'text-[#7dd3fc] bg-[#7dd3fc]/10 border-[#7dd3fc]/25',
-  'In development': 'text-[#6ee7b7] bg-[#6ee7b7]/10 border-[#6ee7b7]/25',
-  Live: 'text-[#86efac] bg-[#86efac]/10 border-[#86efac]/25',
+  Concept: 'text-[#6d28d9] bg-[#6d28d9]/10 border-[#6d28d9]/20',
+  Prototype: 'text-[#0369a1] bg-[#0369a1]/10 border-[#0369a1]/20',
+  'In development': 'text-[#047857] bg-[#047857]/10 border-[#047857]/20',
+  Live: 'text-[#15803d] bg-[#15803d]/10 border-[#15803d]/20',
 };
 const dotColor: Record<Project['stage'], string> = {
-  Concept: '#c4b5fd',
-  Prototype: '#7dd3fc',
-  'In development': '#6ee7b7',
-  Live: '#86efac',
+  Concept: '#7c3aed',
+  Prototype: '#0284c7',
+  'In development': '#059669',
+  Live: '#16a34a',
 };
 ---
 
