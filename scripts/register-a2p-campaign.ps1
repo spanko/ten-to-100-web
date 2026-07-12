@@ -85,6 +85,9 @@ $campaign = @(
   [pscustomobject]@{ Key = 'UsAppToPersonUsecase';  Value = 'LOW_VOLUME' }
   [pscustomobject]@{ Key = 'Description';           Value = 'TenTo100 Products LLC sends lesson scheduling, coaching follow-up, and practice reminder messages to clients who opt in by texting our number. Double opt-in: a one-time confirmation request is sent and no program messages are sent unless the recipient replies YES.' }
   [pscustomobject]@{ Key = 'MessageFlow';           Value = $messageFlow }
+  # Omitting these fails Twilio's automated vet instantly (30908 / 30882).
+  [pscustomobject]@{ Key = 'PrivacyPolicyUrl';      Value = 'https://www.tento100.com/privacy' }
+  [pscustomobject]@{ Key = 'TermsAndConditionsUrl'; Value = 'https://www.tento100.com/terms' }
   [pscustomobject]@{ Key = 'MessageSamples';        Value = "TenTo100: You're confirmed for a lesson Tuesday 4:30 PM. Reply C to change or STOP to opt out." }
   [pscustomobject]@{ Key = 'MessageSamples';        Value = 'TenTo100: Nice work today. This week: 20 minutes of putting drills inside 6 feet. Questions? Just text back. Reply STOP to opt out.' }
   [pscustomobject]@{ Key = 'MessageSamples';        Value = 'TenTo100: A Saturday 10 AM lesson slot just opened - reply YES to take it.' }
