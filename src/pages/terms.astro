@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/content';
+---
+
+<Layout
+  title="Terms of Service — TenTo100"
+  description="TenTo100's terms of service, including the terms of our SMS text-messaging program."
+>
+  <Header />
+  <main id="main" class="mx-auto max-w-2xl px-5 py-16">
+    <p class="eyebrow">Legal</p>
+    <h1 class="mt-1 text-3xl font-bold tracking-tight text-ink">Terms of Service</h1>
+    <p class="mt-2 text-sm text-faint">Effective date: July 11, 2026</p>
+    <p class="mt-4 text-muted">
+      These terms govern your use of www.tento100.com and the services of
+      TenTo100 Products LLC (“TenTo100”, “we”, “us”). By using the site or opting
+      in to our SMS program, you agree to them.
+    </p>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">Part A — The site</h2>
+      <p class="mt-2 text-muted">
+        The site and its content are provided “as is” for general information; we may change or
+        discontinue any part of it at any time. Content on the site is ours or used with
+        permission — don't reproduce it without asking. Nothing on the site is professional,
+        legal, or financial advice. To the fullest extent permitted by law, we are not liable
+        for indirect or consequential damages arising from your use of the site.
+      </p>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">Part B — SMS program terms</h2>
+
+      <h3 class="mt-5 text-lg font-semibold text-ink">1. The program</h3>
+      <p class="mt-2 text-muted">
+        TenTo100 sends lesson scheduling, coaching follow-up, and practice-reminder text
+        messages to people who opt in. How the program works — including the sign-up
+        keyword and number — is described at
+        <a class="text-accent underline" href="/messaging">tento100.com/messaging</a>.
+      </p>
+
+      <h3 class="mt-5 text-lg font-semibold text-ink">2. Opting in</h3>
+      <p class="mt-2 text-muted">
+        You join by texting our number (or our keyword to that number). Before program messages
+        begin you receive a one-time confirmation request; <strong>no program messages are sent
+        unless you reply YES</strong>. We record your consent — the exact language, timestamp,
+        and channel. Consent is not a condition of purchasing anything.
+      </p>
+
+      <h3 class="mt-5 text-lg font-semibold text-ink">3. Frequency and rates</h3>
+      <p class="mt-2 text-muted">
+        Message frequency varies. Message and data rates may apply, depending on your mobile
+        carrier and plan. Mobile carriers are not liable for delayed or undelivered messages.
+      </p>
+
+      <h3 class="mt-5 text-lg font-semibold text-ink">4. Opting out and help</h3>
+      <p class="mt-2 text-muted">
+        Reply <strong>STOP</strong> at any time to cancel; you'll receive one opt-out
+        confirmation and then no further messages. Reply <strong>HELP</strong>, or email
+        <a class="text-accent underline" href={`mailto:${site.email}`}>{site.email}</a>, for
+        assistance. Text START to rejoin.
+      </p>
+
+      <h3 class="mt-5 text-lg font-semibold text-ink">5. Your number</h3>
+      <p class="mt-2 text-muted">
+        You represent that the mobile number you opt in with is yours, and you agree to notify
+        us (or text STOP from the old number) if you give it up, so messages don't reach the
+        number's next owner.
+      </p>
+
+      <h3 class="mt-5 text-lg font-semibold text-ink">6. Privacy</h3>
+      <p class="mt-2 text-muted">
+        Our <a class="text-accent underline" href="/privacy">Privacy Policy</a> governs the
+        program's data. Mobile information and SMS opt-in/consent data will not be shared with
+        third parties or affiliates for marketing or promotional purposes.
+      </p>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">Changes &amp; contact</h2>
+      <p class="mt-2 text-muted">
+        We may update these terms; material changes to the SMS program terms will be announced
+        by text or on this page. Continued participation after a change is acceptance. Questions:
+        <a class="text-accent underline" href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>

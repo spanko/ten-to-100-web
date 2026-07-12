@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/content';
+---
+
+<Layout
+  title="How texting with TenTo100 works"
+  description="How TenTo100's SMS program works: how you opt in, what messages you'll receive, message frequency and rates, and how to opt out with STOP."
+>
+  <Header />
+  <main id="main" class="mx-auto max-w-2xl px-5 py-16">
+    <p class="eyebrow">SMS program</p>
+    <h1 class="mt-1 text-3xl font-bold tracking-tight text-ink">How messaging works</h1>
+    <p class="mt-2 text-muted">
+      How you join TenTo100's text program, what you'll receive, and how to stop anytime.
+    </p>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">How you join</h2>
+      <div class="mt-3 rounded-lg border border-line bg-accent-soft p-4">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent">TenTo100's text line</p>
+        <p class="mt-1 text-ink">
+          <strong>Text LESSON to +1 (303) 900-0969</strong> — or just ask about or book a
+          lesson in your own words. By texting, you agree to receive replies from TenTo100.
+          Message frequency varies. Message &amp; data rates may apply. Reply STOP to opt out,
+          HELP for help.
+          Terms: <a class="text-accent underline" href="/terms">tento100.com/terms</a> &middot;
+          Privacy: <a class="text-accent underline" href="/privacy">tento100.com/privacy</a>
+        </p>
+      </div>
+      <h3 class="mt-6 text-lg font-semibold text-ink">The confirmation step — no messages until you say yes</h3>
+      <p class="mt-2 text-muted">
+        Before the program messages begin, the first text you receive is a one-time confirmation
+        request, and it reads:
+      </p>
+      <blockquote class="mt-3 rounded-lg border border-line bg-surface-2 p-4 text-ink">
+        “TenTo100: Reply YES to receive lesson scheduling and coaching texts. Msg frequency
+        varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. Terms:
+        tento100.com/terms Privacy: tento100.com/privacy”
+      </blockquote>
+      <p class="mt-3 text-muted">
+        <strong>If you do not reply YES, you will not receive program messages.</strong> Your
+        consent — the exact language you agreed to, when, and on which channel — is recorded.
+        You are never signed up silently, and joining is free.
+      </p>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">What you'll receive</h2>
+      <p class="mt-2 text-muted">
+        Lesson scheduling and rescheduling, coaching follow-ups, and practice reminders from
+        TenTo100 for clients who opt in. You will not receive unrelated marketing.
+      </p>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">Opting out and getting help</h2>
+      <p class="mt-2 text-muted">
+        Reply <strong>STOP</strong> at any time to cancel — you'll get one confirmation and then
+        no further messages. Reply <strong>HELP</strong>, or email
+        <a class="text-accent underline" href={`mailto:${site.email}`}>{site.email}</a>, for help.
+        Text START to rejoin.
+      </p>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">Frequency and rates</h2>
+      <p class="mt-2 text-muted">
+        Message frequency varies based on your engagement with TenTo100. Message and data rates
+        may apply, depending on your mobile carrier and plan. Mobile carriers are not liable for
+        delayed or undelivered messages.
+      </p>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold text-ink">Privacy &amp; provider</h2>
+      <p class="mt-2 text-muted">
+        We handle your information as described in our
+        <a class="text-accent underline" href="/privacy">Privacy Policy</a>; your mobile
+        information and SMS consent are never shared with third parties or affiliates for
+        marketing purposes. Full SMS program terms are in our
+        <a class="text-accent underline" href="/terms">Terms of Service</a>. Messages are
+        delivered through Twilio, our messaging provider. The program complies with the TCPA,
+        CTIA Messaging Principles &amp; Best Practices, and A2P 10DLC requirements.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</Layout>
