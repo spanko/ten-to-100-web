@@ -22,3 +22,6 @@ pnpm-debug.log*
 Thumbs.db
 .vscode/*
 !.vscode/extensions.json
+
+# Machine-local Claude notes — never committed
+CLAUDE.local.md
