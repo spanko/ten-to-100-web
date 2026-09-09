@@ -1,38 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4c8dff"/>
-      <stop offset="1" stop-color="#8b7bff"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="0%" r="70%">
-      <stop offset="0" stop-color="#4c8dff" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#06080c" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="#06080c"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="#faf9f7"/>
   <g font-family="ui-sans-serif,Segoe UI,Helvetica,Arial,sans-serif">
-    <g transform="translate(80,80)">
-      <rect width="48" height="48" rx="11" fill="url(#g)"/>
-      <text x="24" y="32" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace"
-            font-size="20" font-weight="700" fill="#06080c">10</text>
-      <text x="66" y="33" font-size="26" font-weight="600" fill="#e8edf6">TenTo100</text>
+    <g transform="translate(80,72)">
+      <rect width="40" height="40" rx="5" fill="#10192a"/>
+      <text x="20" y="27" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace"
+            font-size="17" font-weight="700" fill="#ffffff">10</text>
+      <text x="56" y="28" font-size="25" font-weight="600" fill="#10192a" letter-spacing="-0.4">TenTo100</text>
     </g>
-    <text x="80" y="300" font-size="74" font-weight="700" fill="#e8edf6" letter-spacing="-2">
+
+    <rect x="80" y="160" width="1040" height="1" fill="#e0ded8"/>
+
+    <text x="80" y="200" font-family="ui-monospace,Menlo,Consolas,monospace"
+          font-size="19" letter-spacing="2.6" fill="#8c93a0">FOUNDER-LED VENTURE STUDIO</text>
+
+    <text x="80" y="330" font-size="76" font-weight="600" fill="#10192a" letter-spacing="-2.4">
       We take AI-native ideas
     </text>
-    <text x="80" y="386" font-size="74" font-weight="700" letter-spacing="-2">
-      <tspan fill="#e8edf6">from </tspan><tspan fill="url(#g)">10 to 100.</tspan>
+    <text x="80" y="420" font-size="76" font-weight="600" letter-spacing="-2.4">
+      <tspan fill="#10192a">from </tspan><tspan fill="#17408c">10 to 100.</tspan>
     </text>
-    <text x="80" y="470" font-size="30" fill="#97a3b6">
-      Founder-led venture studio · Built on Microsoft Azure
+
+    <rect x="80" y="486" width="1040" height="1" fill="#e0ded8"/>
+
+    <text x="80" y="536" font-size="27" fill="#55606f">
+      AI-native products, built on Microsoft Azure
     </text>
-    <g transform="translate(80,520)" font-family="ui-monospace,Menlo,Consolas,monospace">
-      <text x="0" y="34" font-size="46" font-weight="700" fill="#97a3b6">10</text>
-      <rect x="70" y="20" width="180" height="3" fill="url(#g)"/>
-      <text x="266" y="34" font-size="34" fill="#5e6b80">→</text>
-      <rect x="320" y="20" width="180" height="3" fill="url(#g)"/>
-      <text x="516" y="34" font-size="46" font-weight="700" fill="url(#g)">100</text>
+
+    <g transform="translate(950,505)" font-family="ui-monospace,Menlo,Consolas,monospace">
+      <text x="0" y="30" font-size="38" font-weight="600" fill="#10192a">10</text>
+      <rect x="54" y="16" width="48" height="1.5" fill="#c9c6be"/>
+      <text x="116" y="30" font-size="38" font-weight="600" fill="#17408c">100</text>
     </g>
   </g>
 </svg>

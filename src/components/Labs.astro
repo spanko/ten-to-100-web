@@ -9,26 +9,26 @@ import SectionHeading from './SectionHeading.astro';
   PLACEHOLDER cards. Populate `labs.entries` in src/data/content.ts and flip
   the flag to publish.
 -->
-<section id="labs" class="section bg-[var(--color-bg-soft)]">
+<section id="labs" class="section border-t border-[var(--color-line)] bg-[var(--color-bg-soft)]">
   <div class="container-x">
     <SectionHeading eyebrow={labs.eyebrow} heading={labs.heading}>
-      <p class="mt-4 text-[var(--color-muted)]">{labs.intro}</p>
+      <p class="measure mt-5 text-[var(--color-muted)]">{labs.intro}</p>
     </SectionHeading>
 
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {
         labs.entries.map((entry, i) => (
           <article
-            class="reveal rounded-xl border border-dashed border-[var(--color-line)] bg-transparent p-5"
+            class="reveal rounded-[3px] border border-dashed border-[var(--color-line-strong)] bg-transparent p-6"
             style={`transition-delay: ${i * 70}ms;`}
           >
             <div class="flex items-center justify-between gap-3">
-              <h3 class="font-medium text-[var(--color-ink)]/90">{entry.name}</h3>
-              <span class="chip border-dashed">placeholder</span>
+              <h3 class="text-base">{entry.name}</h3>
+              <span class="eyebrow shrink-0">placeholder</span>
             </div>
             <p class="mt-2 text-sm text-[var(--color-muted)]">{entry.blurb}</p>
             {entry.tags?.length > 0 && (
-              <ul class="mt-4 flex flex-wrap gap-2" aria-label="Tags">
+              <ul class="mt-4 flex flex-wrap items-center" aria-label="Tags">
                 {entry.tags.map((tag) => (
                   <li class="chip">{tag}</li>
                 ))}

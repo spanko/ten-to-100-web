@@ -3,7 +3,7 @@ import { site, nav } from '../data/content';
 ---
 
 <header
-  class="sticky top-0 z-50 border-b border-[var(--color-line)]/60 bg-[var(--color-bg)]/80 backdrop-blur-md"
+  class="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[var(--color-bg)]/90 backdrop-blur-sm"
 >
   <nav
     class="container-x flex h-16 items-center justify-between"
@@ -11,16 +11,16 @@ import { site, nav } from '../data/content';
   >
     <a
       href="#top"
-      class="group flex items-center gap-2 font-semibold tracking-tight text-[var(--color-ink)]"
+      class="flex items-center gap-2.5 font-semibold tracking-tight text-[var(--color-ink)]"
     >
       <span
-        class="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] font-mono text-[0.7rem] font-bold text-white"
+        class="grid h-6 w-6 place-items-center rounded-[3px] bg-[var(--color-ink)] font-mono text-[0.65rem] font-bold text-white"
         aria-hidden="true">10</span
       >
       <span>{site.name}</span>
     </a>
 
-    <ul class="hidden items-center gap-7 md:flex">
+    <ul class="hidden items-center gap-8 md:flex">
       {
         nav.map((link) => (
           <li>
@@ -35,7 +35,10 @@ import { site, nav } from '../data/content';
       }
     </ul>
 
-    <a href="#contact" class="btn btn-primary inline-flex h-9 px-3.5 py-0 text-sm sm:px-4">
+    <a
+      href="#contact"
+      class="btn btn-ghost h-9 px-3.5 py-0 text-sm"
+    >
       Get in touch
     </a>
   </nav>

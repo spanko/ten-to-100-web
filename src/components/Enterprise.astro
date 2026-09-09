@@ -9,14 +9,14 @@ import SectionHeading from './SectionHeading.astro';
       <div class="grid gap-8 md:grid-cols-2 md:items-center">
         <div>
           <SectionHeading eyebrow={enterprise.eyebrow} heading={enterprise.heading}>
-            <p class="mt-4 text-[var(--color-muted)]">{enterprise.body}</p>
+            <p class="mt-5 text-[var(--color-muted)]">{enterprise.body}</p>
           </SectionHeading>
         </div>
 
         <ul class="grid gap-3">
           {
             enterprise.capabilities.map((cap) => (
-              <li class="flex items-start gap-3 rounded-lg border border-[var(--color-line)] bg-[var(--color-surface-2)]/40 px-4 py-3">
+              <li class="flex items-start gap-3 border-b border-[var(--color-line)] pb-3">
                 <svg
                   class="mt-0.5 shrink-0 text-[var(--color-accent)]"
                   width="18"
@@ -33,7 +33,7 @@ import SectionHeading from './SectionHeading.astro';
                     stroke-linejoin="round"
                   />
                 </svg>
-                <span class="text-sm text-[var(--color-ink)]/90">{cap}</span>
+                <span class="text-sm">{cap}</span>
               </li>
             ))
           }

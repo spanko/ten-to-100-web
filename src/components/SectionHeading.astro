@@ -3,12 +3,22 @@ interface Props {
   eyebrow?: string;
   heading: string;
   align?: 'left' | 'center';
+  /** Section number shown before the eyebrow, e.g. "01". Omit to hide it. */
+  index?: string;
 }
-const { eyebrow, heading, align = 'left' } = Astro.props;
+const { eyebrow, heading, align = 'left', index } = Astro.props;
 ---
 
 <div class={`reveal max-w-2xl ${align === 'center' ? 'mx-auto text-center' : ''}`}>
-  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-  <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">{heading}</h2>
+  {
+    (index || eyebrow) && (
+      <p class={`eyebrow flex items-center gap-2.5 ${align === 'center' ? 'justify-center' : ''}`}>
+        {index && <span class="text-[var(--color-ink)]">{index}</span>}
+        {index && eyebrow && <span class="h-px w-6 bg-[var(--color-line-strong)]" />}
+        {eyebrow && <span>{eyebrow}</span>}
+      </p>
+    )
+  }
+  <h2 class="mt-4 text-3xl sm:text-[2.5rem]">{heading}</h2>
   <slot />
 </div>
