@@ -162,12 +162,12 @@ export const portfolio = {
       link: { label: 'cleartheroom.ai', href: 'https://cleartheroom.ai' },
     },
     {
-      name: 'The Primer',
-      pitch: 'An adaptive AI learning and storytelling companion for kids.',
+      name: 'Runcible',
+      pitch: 'A storytelling companion that helps children learn — safely.',
       blurb:
-        'The Primer is an adaptive companion that teaches through story — meeting a child where they are and growing with them. An early prototype exploring how AI can make learning feel like an adventure rather than a worksheet.',
+        'Runcible teaches through story, in a persistent world that picks up where last night left off. Every sentence clears an independent safety judge before a child ever hears it, and the morning digest shows a parent exactly what was said and what was held back. An homage to Neal Stephenson’s The Diamond Age, which has stuck with the founder since first imagining a world with books that could think.',
       stage: 'Prototype' as Stage,
-      tags: ['EdTech', 'Storytelling', 'Adaptive learning', 'Kids'],
+      tags: ['EdTech', 'Storytelling', 'Child safety', 'Adaptive learning'],
     },
   ] satisfies Project[],
 };
