@@ -10,7 +10,7 @@ dev server reloads instantly.
 > Why a `.ts` file and not a Markdown file? The portfolio is structured data
 > (each project has a name, pitch, paragraph, a constrained *stage*, and a tag
 > list). A typed file keeps those fields consistent and prevents typos like an
-> invalid stage from silently breaking the colored pills. It is still just text
+> invalid stage from silently breaking the stage markers. It is still just text
 > you edit by hand — this guide maps every editable field.
 
 ---
@@ -37,13 +37,13 @@ Set either to `true` to show that section. They are wired into the page in
 | --- | --- |
 | `site` | Brand name, browser/tab title, SEO meta description, canonical URL, **contact email**, optional Twitter/X handle |
 | `nav` | The header navigation links (in-page anchors) |
-| `hero` | Headline, the gradient `emphasis` phrase ("10 to 100"), sub-headline, both call-to-action buttons |
+| `hero` | Headline, the accented `emphasis` phrase ("10 to 100"), sub-headline, both call-to-action buttons |
 | `whatWeDo` | "The studio model" heading, body paragraphs, and the three pillars |
 | `portfolio` | Section heading/intro and the **project cards** (see below) |
 | `enterprise` | Enterprise practice copy + capability bullets *(shown only if `flags.showEnterprise`)* |
 | `labs` | Labs heading/intro + placeholder cards *(shown only if `flags.showLabs`)* |
 | `azure` | "Built on Microsoft Azure" heading, body, and the four stack items |
-| `team` | Section heading + founder name/role/bio/initials + collaborators note |
+| `team` | Section heading + the founder statement + collaborators note |
 | `contact` | Heading, body, email label/subject, and the optional contact form |
 | `footer` | Tagline, copyright start year, footer links |
 
@@ -60,22 +60,28 @@ Each entry in `portfolio.projects` looks like this:
   blurb: 'A short paragraph — keep it high-level and outward-facing.',
   stage: 'In development' as Stage,
   tags: ['SaaS', 'Computer vision', 'Voice', 'Sports tech'],
+  link: { label: 'birdiepro.com', href: 'https://birdiepro.com' },
 },
 ```
 
 - **`stage`** must be one of exactly: `'Concept'`, `'Prototype'`,
-  `'In development'`, or `'Live'`. Each gets its own colored pill. Keep the
+  `'In development'`, or `'Live'`. Each gets its own marker dot. Keep the
   `as Stage` suffix.
-- **`tags`** — 3–5 reads best. They render as monospace chips.
+- **`tags`** — 3–5 reads best. They render as a monospace caption line.
+- **`link`** is optional. Include it and the card shows a link to the product's
+  own site; leave it out and the card shows no link. Only add one for a site
+  that is actually serving — a card that links to nothing reads worse than a
+  card with no link.
 - To **add** a project, copy a `{ ... }` block (including the trailing comma).
   To **remove** one, delete its block. To **reorder**, move the blocks.
 
 ---
 
-## The founder bio is a placeholder
+## The founder statement is unattributed on purpose
 
-`team.founder.bio` currently contains placeholder text. Replace it with your
-real bio. You can also change `initials` (shown in the avatar circle).
+`team.statement` carries the section on its own. No founder name, photo, or
+initials appears anywhere on this site — that is deliberate, not an oversight.
+Edit the wording freely; do not add a byline back without asking.
 
 ---
 

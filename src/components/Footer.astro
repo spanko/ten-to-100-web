@@ -8,13 +8,13 @@ const yearLabel =
   buildYear > footer.startYear ? `${footer.startYear}–${buildYear}` : `${footer.startYear}`;
 ---
 
-<footer class="border-t border-[var(--color-line)]">
+<footer class="border-t border-[var(--color-line)] bg-[var(--color-bg-soft)]">
   <div
-    class="container-x flex flex-col items-center justify-between gap-6 py-10 sm:flex-row"
+    class="container-x flex flex-col items-start justify-between gap-6 py-12 sm:flex-row sm:items-center"
   >
     <div class="flex items-center gap-2.5">
       <span
-        class="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-2)] font-mono text-[0.7rem] font-bold text-white"
+        class="grid h-6 w-6 place-items-center rounded-[3px] bg-[var(--color-ink)] font-mono text-[0.65rem] font-bold text-white"
         aria-hidden="true">10</span
       >
       <div class="text-sm">
@@ -23,7 +23,7 @@ const yearLabel =
       </div>
     </div>
 
-    <nav class="flex items-center gap-6 text-sm" aria-label="Footer">
+    <nav class="flex flex-wrap items-center gap-x-7 gap-y-2 text-sm" aria-label="Footer">
       {
         footer.links.map((link) => (
           <a
@@ -36,15 +36,15 @@ const yearLabel =
       }
       <a
         href={`mailto:${site.email}`}
-        class="text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
+        class="font-mono text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)]"
       >
         {site.email}
       </a>
     </nav>
   </div>
 
-  <div class="container-x pb-8">
-    <p class="text-xs text-[var(--color-faint)]">
+  <div class="container-x border-t border-[var(--color-line)] py-6">
+    <p class="eyebrow">
       © {yearLabel} {site.name}. All rights reserved.
     </p>
   </div>

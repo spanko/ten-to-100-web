@@ -28,10 +28,12 @@ export interface Project {
   pitch: string;
   /** A short paragraph (1–3 sentences). Keep it high-level / outward-facing. */
   blurb: string;
-  /** Current maturity. Drives the colored stage pill. */
+  /** Current maturity. Drives the stage marker on the card. */
   stage: Stage;
   /** Small tag set (3–5 works best visually). */
   tags: string[];
+  /** Optional public site for the product. Omit for anything not yet public. */
+  link?: { label: string; href: string };
 }
 
 export interface NavLink {
@@ -85,7 +87,7 @@ export const nav: NavLink[] = [
  * ------------------------------------------------------------------ */
 export const hero = {
   eyebrow: 'Founder-led venture studio',
-  /** The headline. The word pair in `emphasis` is rendered in the accent gradient. */
+  /** The headline. The word pair in `emphasis` is rendered in the accent color. */
   headlinePre: 'We take AI-native ideas from',
   emphasis: '10 to 100',
   headlinePost: '.',
@@ -113,7 +115,7 @@ export const whatWeDo = {
     },
     {
       title: 'Grounded in real domains',
-      body: 'Golf instruction, animal behavior, personal health, early learning — we build where domain truth matters and generic tools fall short.',
+      body: 'Golf instruction, animal behavior, the home environment, early learning — we build where domain truth matters and generic tools fall short.',
     },
     {
       title: 'Built to ship',
@@ -148,14 +150,16 @@ export const portfolio = {
         'OneCollar combines hardware with on-device machine learning to read and respond to animal behavior in real time. We’re iterating through a hardware revision while sharpening the on-device models that make it work without the cloud in the loop.',
       stage: 'In development' as Stage,
       tags: ['Hardware', 'On-device ML', 'Wearable', 'IoT'],
+      link: { label: 'onecollar.ai', href: 'https://onecollar.ai' },
     },
     {
-      name: 'SomaCore',
-      pitch: 'A personal health and wellness AI decision engine.',
+      name: 'Clear the Room',
+      pitch: 'Smart, refillable whole-home scent.',
       blurb:
-        'SomaCore aggregates signals from the wearables people already own and turns the noise into clear, personal guidance. It’s an early-stage bet on a decision engine that helps you act on your own data instead of just staring at it.',
-      stage: 'Concept' as Stage,
-      tags: ['Health', 'Wearables', 'Decision engine', 'Personal AI'],
+        'The Clearing is a five-bay diffuser that knows what is loaded and how much is left. Cartridges identify themselves, the companion app names each bay and fires a burst on demand, and the refill model replaces the throwaway cartridge economics the category runs on today.',
+      stage: 'In development' as Stage,
+      tags: ['Hardware', 'Consumer', 'Sensing', 'Companion app'],
+      link: { label: 'cleartheroom.ai', href: 'https://cleartheroom.ai' },
     },
     {
       name: 'The Primer',
@@ -237,19 +241,18 @@ export const azure = {
 };
 
 /* ------------------------------------------------------------------ *
- *  TEAM / FOUNDER   (placeholder — fill in real bio)
+ *  TEAM / FOUNDER
  * ------------------------------------------------------------------ */
 export const team = {
   eyebrow: 'Who’s building this',
   heading: 'Founder-led, builder-first.',
-  founder: {
-    name: 'Adam Wengert',
-    role: 'Founder',
-    /** PLACEHOLDER bio — replace with your real bio. */
-    bio: 'Placeholder bio — replace in src/data/content.ts. A short paragraph on who you are, what you’ve built before, and why TenTo100 exists. Keep it human and specific; let the work speak for the hype.',
-    /** Optional initials shown in the avatar circle. */
-    initials: 'AW',
-  },
+  /**
+   * The founder statement, deliberately unattributed. No founder name, photo,
+   * or initials is published anywhere on this site — the work is the byline.
+   * Do not reintroduce one without asking.
+   */
+  statement:
+    'Founded by a lifelong technologist focused on solving big and small problems to make our lives a little bit easier.',
   collaboratorsNote:
     'TenTo100 works with a small bench of trusted engineers, designers, and domain experts who plug in per product. Interested in collaborating? We’d love to hear from you.',
 };
