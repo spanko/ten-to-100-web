@@ -133,7 +133,7 @@ export const portfolio = {
   eyebrow: 'What we’re building',
   heading: 'The portfolio',
   intro:
-    'Four products in active development, each AI-native and grounded in a domain we know. High-level by design — deeper detail under NDA.',
+    'Five products in active development, each AI-native and grounded in a domain we know. High-level by design — deeper detail under NDA.',
   projects: [
     {
       name: 'Birdie Pro',
@@ -168,6 +168,14 @@ export const portfolio = {
         'Runcible teaches through story, in a persistent world that picks up where last night left off. Every sentence clears an independent safety judge before a child ever hears it, and the morning digest shows a parent exactly what was said and what was held back. An homage to Neal Stephenson’s The Diamond Age, which has stuck with the founder since first imagining a world with books that could think.',
       stage: 'Prototype' as Stage,
       tags: ['EdTech', 'Storytelling', 'Child safety', 'Adaptive learning'],
+    },
+    {
+      name: 'Windrow',
+      pitch: 'AI discovery and execution for small and mid-size businesses.',
+      blurb:
+        'Windrow reads the shape of a business’s work in Microsoft 365 — who meets, where replies lag, which quotes never got a follow-up — to find the hours worth automating and the revenue slipping away. The best ideas are tested on the customer’s own documents before anyone commits, and then we build them. Metadata only, inside the customer’s own tenant, in about two weeks.',
+      stage: 'In development' as Stage,
+      tags: ['Microsoft 365', 'Copilot', 'Process discovery', 'SMB'],
     },
   ] satisfies Project[],
 };
